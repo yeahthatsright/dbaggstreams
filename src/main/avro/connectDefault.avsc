@@ -1,0 +1,46 @@
+{
+  "type": "record",
+  "name": "ConnectDefault",
+  "namespace": "io.confluent.connect.avro",
+  "fields": [
+    {
+      "name": "id",
+      "type": "int"
+    },
+    {
+      "name": "sales_person",
+      "type": "string"
+    },
+    {
+      "name": "first_name",
+      "type": "string"
+    },
+    {
+      "name": "last_name",
+      "type": "string"
+    },
+    {
+      "name": "total_sale",
+      "type": {
+        "type": "bytes",
+        "scale": 2,
+        "precision": 64,
+        "connect.version": 1,
+        "connect.parameters": {
+          "scale": "2"
+        },
+        "connect.name": "org.apache.kafka.connect.data.Decimal",
+        "logicalType": "decimal"
+      }
+    },
+    {
+      "name": "transaction_date",
+      "type": {
+        "type": "long",
+        "connect.version": 1,
+        "connect.name": "org.apache.kafka.connect.data.Timestamp",
+        "logicalType": "timestamp-millis"
+      }
+    }
+  ]
+}
